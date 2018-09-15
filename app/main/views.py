@@ -3,7 +3,7 @@ from . import main
 from .forms import CommentForm
 from flask_login import login_required, current_user
 from .. import auth
-from ..models import User
+from ..models import User,Comment
 from .forms import UpdateProfile
 from .. import db,photos
 
@@ -21,13 +21,17 @@ def index():
 
 
 
-@main.route('/comment')
+@main.route('/comment' , methods = ['GET','POST'])
 def comment():
     form = CommentForm() 
-    
+    if form.validate_on_submit():
+        comment = Comment(user=form.user.data,comment=form.comment.data)
+        comment.save_comment()
+        return redirect(url_for('main.index'))
+        comments = Comment.query.filter_by().all()
     
 
-    return render_template('index.html', form = form)    
+    return render_template('comment.html', form = form)    
 
 
 
