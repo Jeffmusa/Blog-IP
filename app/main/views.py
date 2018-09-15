@@ -29,9 +29,9 @@ def comment():
         comment.save_comment()
         return redirect(url_for('main.index'))
         
-    
+    comments=Comment.query.all()
 
-    return render_template('comment.html', form = form)    
+    return render_template('comment.html', form = form ,comments=comments)    
 
 
 @main.route('/blog' , methods = ['GET','POST'])
@@ -42,9 +42,9 @@ def blog():
         blog.save_blog()
         return redirect(url_for('main.blog'))
         
-    
+    posts=Blog.query.all()
 
-    return render_template('blog.html', form = form )     
+    return render_template('blog.html',posts=posts, form = form )     
 
 
 

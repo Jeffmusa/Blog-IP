@@ -1,21 +1,25 @@
 {% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
 <div class="container">
+       
     <div class="row">
 
-
+            <div class="col-md-8">
         {% for comment in comments %}
+        <div class="panel panel-primary panel-heading"> 
 
-        <p>{{ comment.user }}</p>
-        <p> By: {{comment.comment}}</p>
+        <p> {{comment.comment}}</p>
+       <p> By:{{ comment.user }}</p>
+        </div>
 
         {% endfor %}
-        <div class="col-md-6">
+        </div>
             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Comment</a>
 
+<div class="col-md-4">
             <div class="collapse multi-collapse" id="multiCollapseExample1">
-                <div class="card card-body">
+              
                     {{ wtf.quick_form(form) }}
-                </div>
+               
             </div>
 
 

@@ -13,16 +13,19 @@
 </head>
 {% extends 'base.html'%} {% import 'macros.html' as macro%}
 
-<body style="background-image:url('http://www.youthincmag.com/wp-content/uploads/2017/04/blog.jpg')">
+<body >
+    <div class="container">
+            <div class="panel panel-primary panel-heading"> 
     {% block content %}
 
-  
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error porro cumque quaerat vel corrupti? Exercitationem, error? Animi, voluptas quod quam neque ipsum aliquam pariatur! Harum assumenda voluptatum eligendi error cumque.</p>
+  </div>
     <div class="container" style="background-color: rgb(235, 230, 160);">
         <ul><li>
-      <a href="/comment">Blog comment</a> 
+      <a href="/comment">Blog comments</a> 
      </li>
      <li>
-      <a href="/blog">BLOGS</a>
+     <h1> <a href="/blog">BLOGS</a></h1>
     </li>
 </ul>
       
@@ -34,6 +37,7 @@
     </div>
 
     {% endblock%}
+</div>
 </body>
 
 </html>

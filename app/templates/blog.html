@@ -2,17 +2,23 @@
 <div class="container">
     <div class="row">
 
-
-        {% for comment in comments %}
-
-        <p>{{ comment.user }}</p>
-        <p> By: {{comment.comment}}</p>
+            <div class="col-md-8">
+        {% for blog in posts %}
+        <div class="panel panel-primary panel-heading">   
+        <p>  {{blog.blog}}</p>    
+     <p>By:{{ blog.user }}</p>
+        
+        <div class="card-footer">
+        <p>{{ blog.date_posted }}</p>
+    </div>
+    </div>
 
         {% endfor %}
-        <div class="col-md-6">
+        </div>
+        <div class="col-md-4">
             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add blog</a>
 
-            <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="collapse multi-collapse" id="multiCollapseExample1" style=" padding:30px;">
                 <div class="card card-body">
                     {{ wtf.quick_form(form) }}
                 </div>
