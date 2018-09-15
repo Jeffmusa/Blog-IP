@@ -28,7 +28,7 @@ def comment():
         comment = Comment(user=form.user.data,comment=form.comment.data)
         comment.save_comment()
         return redirect(url_for('main.index'))
-        comments = Comment.query.filter_by().all()
+        
     
 
     return render_template('comment.html', form = form)    
