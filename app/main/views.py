@@ -1,9 +1,9 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
-from .forms import CommentForm
+from .forms import CommentForm,BlogForm
 from flask_login import login_required, current_user
 from .. import auth
-from ..models import User,Comment
+from ..models import User,Comment,Blog
 from .forms import UpdateProfile
 from .. import db,photos
 
@@ -32,6 +32,19 @@ def comment():
     
 
     return render_template('comment.html', form = form)    
+
+
+@main.route('/blog' , methods = ['GET','POST'])
+def blog():
+    form = BlogForm() 
+    if form.validate_on_submit():
+        blog = Blog(user=form.user.data,blog=form.blog.data,user_id=current_user.id)
+        blog.save_blog()
+        return redirect(url_for('main.blog'))
+        
+    
+
+    return render_template('blog.html', form = form )     
 
 
 

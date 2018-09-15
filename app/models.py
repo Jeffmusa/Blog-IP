@@ -40,6 +40,24 @@ class User(UserMixin,db.Model):
 
 
 
+class Blog(UserMixin,db.Model):
+
+    __tablename__ = 'blogs'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.String(255))
+    blog = db.Column(db.String(1000))
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+   
+    
+    def save_blog(self):
+        db.session.add(self)
+        db.session.commit()        
+
+
+
+
 class Comment(UserMixin,db.Model):
 
     __tablename__ = 'comments'

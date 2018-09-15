@@ -4,6 +4,14 @@ from wtforms.validators import Required
 
 
 
+class BlogForm(FlaskForm):
+
+    user = StringField('Your name',validators=[Required()])
+
+    blog = TextAreaField('Your blog',validators=[Required()])
+    
+    submit = SubmitField('Post')
+
 
 class CommentForm(FlaskForm):
 
