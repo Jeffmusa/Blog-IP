@@ -25,7 +25,7 @@ def index():
 def comment():
     form = CommentForm() 
     if form.validate_on_submit():
-        comment = Comment(user=form.user.data,comment=form.comment.data)
+        comment = Comment(user=form.user.data,comment=form.comment.data,user_id=current_user.id)
         comment.save_comment()
         return redirect(url_for('main.index'))
         
