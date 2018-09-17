@@ -9,7 +9,14 @@
 
             <div class="col-md-8">
         {% for blog in posts %}
-        <div class="panel panel-primary panel-heading">   
+        
+        
+        <div class="panel panel-success panel-body">
+                <div class="panel panel-success panel-heading">  
+               
+            <h2 style="text-align:center">{{blog.heading}}</h2>
+            </div> 
+      
         <p>  {{blog.blog}}</p>    
      <p>By:{{ blog.user }}</p>
         
@@ -28,6 +35,7 @@
             <div class="collapse multi-collapse" id="multiCollapseExample1" style=" padding:30px;">
                 <div class="card card-body">
                     {{ wtf.quick_form(form) }}
+                    
                    
                 </div>
             </div>
