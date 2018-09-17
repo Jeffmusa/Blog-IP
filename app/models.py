@@ -46,6 +46,7 @@ class Blog(UserMixin,db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user = db.Column(db.String(255))
+    heading = db.Column(db.String(255))
     blog = db.Column(db.String(1000))
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
@@ -73,3 +74,8 @@ class Comment(UserMixin,db.Model):
     def save_comment(self):
         db.session.add(self)
         db.session.commit()        
+
+
+    def delete_comment(self, comment):
+        db.session.delete(comment)
+        db.session.commit()
