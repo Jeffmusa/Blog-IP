@@ -44,7 +44,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("FEEL SAFE WITH ME","email/welcome_user",user.email,user=user)
+        mail_message("SUBSCRIPTION CONFIRMED ","email/welcome_user",user.email,user=user)
 
         return redirect(url_for('auth.login'))
         title = "New Account"
