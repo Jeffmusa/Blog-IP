@@ -10,23 +10,53 @@
     {% endif %}
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 {% extends 'base.html'%} {% import 'macros.html' as macro%}
 
 <body >
-    <div class="container">
+    
             
     {% block content %}
-    <div class="panel panel-primary panel-heading"> 
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-  <p> Error porro cumque quaerat vel corrupti? Exercitationem, error? Animi, voluptas quod quam neque ipsum aliquam pariatur! Harum assumenda voluptatum eligendi error cumque.</p>
+    <div class="jumbotron">
+            <div class="panel panel-primary panel-heading"> 
+                <div class="container">
+ <h1 style="font-family: 'Cookie', cursive; text-align: center;">Hard Truths</h1> 
+  <p>
+        The only part they told us about entrepreneurship was that we would be our own bosses.
+        They never told us that we would fail many times before we succeed. 
+        They never told us that we would work 5 times more than our employees and not get anything sometimes.
+        They never told us that this would cripple our credit score. That we will be in debt and owe alot of people money. 
+        No one said anything about the sleepless nights trying to figure out a way forward. 
+        No one told us about the stress and anxiety.
+        No one told us that this will cause conflict between us and or relatives, and family members. 
+        No one told us that we would be jokes to the society especially when we start changing from one business to another.
+        No one told us that sometimes we will go six months or more without any income. Living in the edge and surviving through borrowing money from different people.
+        No one told us that our doors would be shut down due failure to pay staff, they can’t get to work.
+        No one told us we would be hobos at some point. 
+        No one told us that our husbands wives, boyfriends and girlfriend's would leave us because they will not understand our journey.
+        No one told us that we will have to be more than patient. 
+        That we would make so many mistakes end up losing alot of money. 
+        That at some point we would have to risk our lives in order to move forward.
+        <p>
+        We had to figure this out all by ourselves. 
+        Many gave up on the journey. 
+        Some died on the journey.
+        But some of us after going through so much pain we decided that we were going to succeed or die trying . 
+        Some of us we are never giving up on this no matter what. We are now doing it and very aware of the circumstances. 
+        It's win or nothing for us and it's too late to go back now.
+        We are entrepreneurs!!
+    </p></p>
+        <h3><a href="/comment"><i class="glyphicon glyphicon-comment"></i>blog comments</a> </h3>
+    </div>
   </div>
-    <div class="container" style="background-color: rgb(235, 230, 160);">
-        <ul><li>
-      <a href="/comment">Blog comments</a> 
-     </li>
+    
+        <ul>
+      
      <li>
-     <h1> <a href="/blog">BLOGS</a></h1>
+     <h2> <a href="/blog">VIEW BLOGS</a></h2>
     </li>
 </ul>
       
@@ -35,10 +65,70 @@
 
 
        
+    
     </div>
+    <section id="lab_social_icon_footer">
+            <!-- Include Font Awesome Stylesheet in Header -->
+            
+            <div class="container">
+                    <div class="text-center center-block">
+                            <a href="https://www.facebook.com/tecno.myles"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                            <a href="https://twitter.com/jeffreylamar9"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                            <a href="https://www.instagram.com/jeffreylamar777"><i id="social-gp" class="fa fa-instagram fa-3x social"></i></a>
+                            <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                </div>                                                          
+            </div>
+            </section>
+<style>
+#lab_social_icon_footer {
+  padding: 40px 0;
+  background-color: #dedede;
+}
 
+#lab_social_icon_footer a {
+  color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+/*
+    Multicoloured Hover Variations
+*/
+
+#lab_social_icon_footer #social-fb:hover {
+  color: #3B5998;
+}
+
+#lab_social_icon_footer #social-tw:hover {
+  color: #4099FF;
+}
+
+#lab_social_icon_footer #social-gp:hover {
+  color: #d34836;
+}
+
+#lab_social_icon_footer #social-em:hover {
+  color: #f39c12;
+}
+
+
+</style>
     {% endblock%}
-</div>
+
 </body>
 
 </html>

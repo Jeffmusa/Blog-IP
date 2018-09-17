@@ -6,6 +6,7 @@ from .. import auth
 from ..models import User,Comment,Blog
 from .forms import UpdateProfile
 from .. import db,photos
+import markdown2
 
 
 @main.route('/')
@@ -28,11 +29,33 @@ def comment():
         comment = Comment(user=form.user.data,comment=form.comment.data)
         comment.save_comment()
         
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.comment'))
         
     comments=Comment.query.all()
 
     return render_template('comment.html', form = form ,comments=comments)    
+
+
+
+@main.route('/deletecomment/<int:id>', methods=['POST','GET'])
+def delete_comment(id):
+    try:
+        if current_user.is_authenticated:
+            form = CommentForm()
+            fetched_comment = Comment.query.all()
+
+            db.session.delete(fetched_comment)
+            db.session.commit()
+            
+            return redirect(url_for('main.index'))
+        return ''
+
+    except Exception as e:
+        return (str(e)) 
+
+
+
+
 
 
 @main.route('/blog' , methods = ['GET','POST'])
@@ -46,14 +69,6 @@ def blog():
     posts=Blog.query.all()
 
     return render_template('blog.html',posts=posts, form = form )     
-
-
-
-
-
-
-
-
 
 
 
