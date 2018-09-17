@@ -8,6 +8,8 @@ class BlogForm(FlaskForm):
 
     user = StringField('Your name',validators=[Required()])
 
+    heading = StringField('Blog Heading',validators=[Required()])
+
     blog = TextAreaField('Your blog',validators=[Required()])
     
     submit = SubmitField('Post')
@@ -25,3 +27,7 @@ class CommentForm(FlaskForm):
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [Required()])
     submit = SubmitField('Submit')   
+
+class DeletePost(FlaskForm):
+    comment_id = StringField()
+    delete = SubmitField('Delete')
