@@ -25,8 +25,9 @@ def index():
 def comment():
     form = CommentForm() 
     if form.validate_on_submit():
-        comment = Comment(user=form.user.data,comment=form.comment.data,user_id=current_user.id)
+        comment = Comment(user=form.user.data,comment=form.comment.data)
         comment.save_comment()
+        
         return redirect(url_for('main.index'))
         
     comments=Comment.query.all()
@@ -38,7 +39,7 @@ def comment():
 def blog():
     form = BlogForm() 
     if form.validate_on_submit():
-        blog = Blog(user=form.user.data,blog=form.blog.data,user_id=current_user.id)
+        blog = Blog(user=form.user.data,blog=form.blog.data)
         blog.save_blog()
         return redirect(url_for('main.blog'))
         
