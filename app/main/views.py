@@ -1,12 +1,13 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
-from .forms import CommentForm,BlogForm
+from .forms import CommentForm,BlogForm, DeletePost
 from flask_login import login_required, current_user
 from .. import auth
 from ..models import User,Comment,Blog
 from .forms import UpdateProfile
 from .. import db,photos
 import markdown2
+from ..email import mail_message
 
 
 @main.route('/')
@@ -24,50 +25,39 @@ def index():
 
 
 @main.route('/comment' , methods = ['GET','POST'])
+@login_required
 def comment():
     form = CommentForm() 
+    del_form = DeletePost()
     if form.validate_on_submit():
         comment = Comment(user=form.user.data,comment=form.comment.data)
         comment.save_comment()
         
         return redirect(url_for('main.comment'))
+    elif del_form.validate_on_submit():
+        
+        comment_id = del_form.comment_id.data
+        comment= Comment.query.filter_by(comment=comment_id).first()
+        if comment:
+            
+            comment.delete_comment(comment)
+        return redirect(url_for('main.comment'))
         
     comments=Comment.query.all()
 
-    return render_template('comment.html', form = form ,comments=comments)    
-
-
-
-@main.route('/deletecomment/<int:id>', methods=['POST','GET'])
-def delete_comment(id):
-    try:
-        if current_user.is_authenticated:
-            comments = Comment.query.filter_by(id=id).all()
-            for comment in comments:
-                db.session.delete(comment)
-                db.session.commit()
-
-           
-            
-            
-            
-            return redirect(url_for('main.index'))
-        return ''
-
-    except Exception as e:
-        return (str(e)) 
-
-
-
-
+    return render_template('comment.html', form = form ,comments=comments, del_form=del_form)    
 
 
 @main.route('/blog' , methods = ['GET','POST'])
+@login_required
 def blog():
     form = BlogForm() 
     if form.validate_on_submit():
-        blog = Blog(user=form.user.data,blog=form.blog.data)
+        blog = Blog(user=form.user.data,blog=form.blog.data,heading=form.heading.data)
         blog.save_blog()
+        user=User.query.all()
+        for email in user:
+            mail_message("Blog updates","email/subscription",email.email,user=user)
         return redirect(url_for('main.blog'))
         
     posts=Blog.query.all()
