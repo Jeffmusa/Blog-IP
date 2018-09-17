@@ -11,7 +11,14 @@
         <p> {{comment.comment}}</p>
        <p> By:{{ comment.user }}</p>
       <p>{{ comment.date_posted }}</p>
-       <a class="btn btn-danger" href="/deletecomment">Delete</a>
+
+
+      <form action="" method="POST">
+          {{ del_form.csrf_token }}
+          {{ del_form.comment_id(class='d-none', value=comment.comment) }}
+          {{ del_form.delete(class='btn btn-danger') }}
+      </form>
+
 
         </div>
 
