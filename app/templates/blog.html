@@ -1,5 +1,6 @@
 {% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
 <div class="container">
+    <a href="/"><i class="glyphicon glyphicon-menu-left"></i>Back</a>
     <div class="row">
             <div class="jumbotron" style="text-align:center">
                     <p >These are more blogs from different people.</p>
@@ -15,13 +16,14 @@
         <div class="card-footer">
         <p>{{ blog.date_posted }}</p>
     </div>
+    <a href="/comment"><i class="glyphicon glyphicon-comment"></i></a>
     </div>
 
         {% endfor %}
         </div>
         
         <div class="col-md-4">
-            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add blog</a>
+            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="glyphicon glyphicon-plus"></i>Add blog</a>
 
             <div class="collapse multi-collapse" id="multiCollapseExample1" style=" padding:30px;">
                 <div class="card card-body">
