@@ -10,6 +10,7 @@ import markdown2
 
 
 @main.route('/')
+
 def index():
     '''
     View root page function that returns index page and its data
@@ -41,11 +42,14 @@ def comment():
 def delete_comment(id):
     try:
         if current_user.is_authenticated:
-            form = CommentForm()
-            fetched_comment = Comment.query.all()
+            comments = Comment.query.filter_by(id=id).all()
+            for comment in comments:
+                db.session.delete(comment)
+                db.session.commit()
 
-            db.session.delete(fetched_comment)
-            db.session.commit()
+           
+            
+            
             
             return redirect(url_for('main.index'))
         return ''

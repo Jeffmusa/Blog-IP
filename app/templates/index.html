@@ -13,6 +13,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda:700|Pacifico" rel="stylesheet">
 </head>
 {% extends 'base.html'%} {% import 'macros.html' as macro%}
 
@@ -20,9 +21,13 @@
 
 
     {% block content %}
+    
+    <div class="image" style="padding:300px;background-image:url('http://deseta.info/wp-content/uploads/2018/04/interesting-office-table-top-view-full-size-of-furniture-intended-for-desk-tops-decor-4.jpg');background-size:cover;">
+     
+    </div>
+        
     <div class="jumbotron">
-        <h2 style="text-align:center">Welcome to blog site.Comment on a blog and take the opportunity to add your own blog.</h2>
-        <div class="panel panel-primary panel-heading">
+             <div class="panel panel-primary panel-heading">
             <div class="container">
                 <h1 style="font-family: 'Cookie', cursive; text-align: center;">Hard Truths</h1>
                 <p>
@@ -70,10 +75,11 @@
 
 
     </div>
-    <section id="lab_social_icon_footer">
+    <section id="lab_social_icon_footer" style=" widows: 200px;background-size:cover;background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgICAcHCA0IBwcHBw0HBwcHCA8IDQcNFREWFhURExMYHSggGCYxIhUTITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAHIBuwMBIgACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAAAAQIDBAf/xAAaEAEBAQEBAQEAAAAAAAAAAAAAARESAiFB/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APDrd+37b9tv6QAAAAAAAAAAAAADAgeHgEMMYBBWDALBisGAnArDwE4MVgwE4MVgwE4MXgwEYMXgwEYMXhYCcGKwYCcLF4WAnBisGAnCXhYCQrCwCJQBIPABAAAAAAAAAAAAAAAAAAAAAAMAAeHgFgw8PALBisPATgxWHgJwYvBgJwYvBgJwYvBgIw8XgwEYMacjAZ4MacjkGeDGnI5BngxpyMBngxpyWAzwY0wsBGFjTCwEYWNMLARhYvBgIwsXhYCcLF4WAnCVgwEkrCAgZAAAAAAAAAAYADDMCw8PDwCw8PDkBOHisPATh4rDwE4eKw8BODF4eAjDxeHyCORy05PkGfI5acnyDPkctOT5BlyOWvI5Blg5a8jkGXI5a8jkGXJcteRyDLkuWvJcgz5LGvJcgywsa4XIM8LGmFgM8LGmFgM8LGmFYDPCxphYCMLF4WAjCxWAEkogIAADAAGeHgFhyHDkASHIchyAWHIqQ5ALDxUhyAnFSKkOQEyHi55OeQRyrlc8nPII5PlpPJzyDPk+WnJ8gy5PlryfIMuRy15PkGXI5a8nyDHkctuS5BjyOW3I5BjyXLbkcgw5HLbkr5BjyXLbkr5BjyXLW+SvkGPJWNr5TfIMrE2NrE2AywrGtibAZYVjWxNgM8KxdhWAzwrGlibARhLpYCAeDAJQkOAIcgVIAkOQ5DkAYqQSKkApFSHIqQCkVIcipAKQ5FyKnkESKnlcip5BE8nPK55VPII5OeWk8qnkGc8ny0nlU8gynk+Ws8nyDLkctuT5BjyOW/A4BhyOW/A4BhyXLo4LkGHJct+S5BhfJct+SvkHPfJXy3vkr5BhfKeW98pvkGF8lfLa+U3yDGxNjaxN8gxsKxrYmwGVibGtibAZWJsa2JsBnYmxpYmwEWJsXYVgIpKpYAOA4BxUKKgCRUgkVIByKkEipAEipDkVIAkVIcipAKRchyKkApFSKkVICZ5VPK5FTyCJ5VPK55XPIM55VPLSeVTyDKeVctJ5VPIMp5PlrPJ8gx5PltyfIMORy35LkGHI5b8lyDC+S5b3yV8g575K+W98pvkGF8pvlvfKb5BhfKb5b3ym+QYXymxtYmwGN8osb2IsBjYmxrYmwGNibGtibAZWIsa2JsBlYmxpYmwGdibGlTQRYlaQKKhRUA4qFFQFRUhRUBUipCi4ByLkKRcgCRchSLkA5FyFIuQBIuQSLkASKkORcgFIqeVSKkAp5VPKpFSAmeVTyqRU8gieVTyueVTyDPkcteT5BjyOW/Jcgx5TfLfkr5BhfKb5b3ym+QYXyV8tr5TYDC+U3y2sTYDGxFjaxFgMbE2NrEWAxsRY2sRYDGxNjWxFgMrEWNbEWAzsRY0sRQZ2JsaVFgM7E1pUUEVK6kChgAuKgAK8rgALi4AC/KoYBcV5MAuLgALi4AC4uAAqLhgFRcIAqLgAKiiALhgAAACamgAVTQAQmgAip9AAiopgGdR6ABFR6ABFRQARUUAEekUAEVNABFTQARUgA//Z');">
+        <p style="text-align:center;color: #dedede">Reach me out</p>
         <!-- Include Font Awesome Stylesheet in Header -->
 
-        <div class="container">
+        <div class="container" >
             <div class="text-center center-block">
                 <a href="https://www.facebook.com/tecno.myles"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                 <a href="https://twitter.com/jeffreylamar9"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
@@ -89,7 +95,7 @@
         }
 
         #lab_social_icon_footer a {
-            color: #333;
+            color: rgb(231, 234, 238);
         }
 
         #lab_social_icon_footer .social:hover {
